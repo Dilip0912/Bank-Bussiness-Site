@@ -78,6 +78,7 @@ body{
     font-size: 1.6rem;
     padding-top: 1rem;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Section  */
@@ -313,4 +314,18 @@ body{
     font-size: 1.2rem;
 }
 
-
+.cookies{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 4rem;
+}
+.btn--close--cookies{
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+}
