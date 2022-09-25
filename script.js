@@ -102,7 +102,6 @@ console.log(h1.parentElement);
 console.log(h1.previousElementSibling);
 console.log(h1.nextElementSibling);
 
-const nav=document.querySelector(".navbar");
 
 // Building a tabbed component
 const optbtn=document.querySelectorAll(".operations_btn")
@@ -111,18 +110,41 @@ const optcon=document.querySelectorAll(".operations_operation");
 
 optbtncontainer.addEventListener("click",function(e){
     const click=e.target.closest(".operations_btn")
-
+    
     //Guard clause
     if(!click) return;
 
     //Remove active classes
     optbtn.forEach(t=> t.classList.remove("operations_btn--active"));
     optcon.forEach(c=> c.classList.remove("operations_operation--active"));
-
+    
     //Active btn
     click.classList.add("operations_btn--active")
-    document.querySelector(`.operations_operation--${click.dataset.tab}`).classList.add("operations_operation--active");
-    
-})
+    document.querySelector(`.operations_operation--${click.dataset.tab}`).classList.add("operations_operation--active");   
+});
 
 
+//
+const nav=document.querySelector(".navbar")
+nav.addEventListener("mouseover",function(e){
+    if(e.target.classList.contains("navlist-link")){
+        const link=e.target;
+        const siblings=link.closest(".navbar").querySelectorAll(".navlist-link")
+        const logo=link.closest(".navbar").querySelector('img');
+
+        siblings.forEach(elements=> elements.style.opacity=0.5)
+        logo.style.opacity=0.5;
+        link.style.opacity=1;
+    }
+});
+nav.addEventListener("mouseout",function(e){
+    if(e.target.classList.contains("navlist-link")){
+        const link=e.target;
+        const siblings=link.closest(".navbar").querySelectorAll(".navlist-link")
+        const logo=link.closest(".navbar").querySelector('img');
+
+        siblings.forEach(elements=> elements.style.opacity=1)
+        logo.style.opacity=1;
+        link.style.opacity=1;
+    }
+});
