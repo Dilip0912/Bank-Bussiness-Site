@@ -14,7 +14,7 @@ body{
     justify-content: space-between;
     width: 90%;
     padding: 1rem 5rem;
-    height: 15vh;
+    height: 7vh;
 }
 .navlist{
     display: flex;
@@ -45,6 +45,10 @@ body{
 }
 #nav-openaccount:hover{
     background-color: #4bbb7d;
+}
+.sticky{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.95);
 }
 .introduction{
     height: 450px;

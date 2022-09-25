@@ -148,3 +148,11 @@ nav.addEventListener("mouseout",function(e){
         link.style.opacity=1;
     }
 });
+
+const initialCoords=s1.getBoundingClientRect();
+
+window.addEventListener("scroll",function(){
+    if(window.scrollY>initialCoords.top)nav.classList.add("sticky")
+    else nav.classList.remove("sticky")
+    console.log(nav)
+});
