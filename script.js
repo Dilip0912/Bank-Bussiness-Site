@@ -49,19 +49,19 @@ btnscroll.addEventListener("click",function(e){
 // }
 // h.addEventListener('mouseenter',alerth1);   //we can delete the eventhandler in this way
 
-// Event propagation
-document.querySelectorAll(".navlist-link").forEach(element => {
+// Event propagation: capturing and bubbling
+// document.querySelectorAll(".navlist-link").forEach(element => {
     
-    element.addEventListener("click",
-    function(e){
-        this.style.backgroundColor="lightgreen"
-    }
-)});
-document.querySelector(".navbar").addEventListener("click",
-    function(e){
-        this.style.backgroundColor="lightblue"
-    }
-);
+//     element.addEventListener("click",
+//     function(e){
+//         this.style.backgroundColor="lightgreen"
+//     }
+// )});
+// document.querySelector(".navbar").addEventListener("click",
+//     function(e){
+//         this.style.backgroundColor="lightblue"
+//     }
+// );
 
 // page scrolling
 // document.querySelectorAll(".navlist-link").forEach(function(ele){
@@ -83,3 +83,46 @@ document.querySelector(".navlist").addEventListener("click",function(e){
         document.querySelector(id).scrollIntoView({behavior:"smooth"});
     }
 });
+
+//Dom Traversing
+//Querselector selects child node whereas closest selects parent node
+//Going downward: child
+const h1=document.querySelector("h1");
+console.log(h1.querySelector(".intro--mainheading--design"));
+console.log(h1.children);
+h1.firstElementChild.style.color="lightblue";
+h1.lastElementChild.style.color="grey";
+
+//Going upward: parent
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+// h1.closest("header").style.backgroundColor="brown";
+
+//Going sideways:siblings
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+
+const nav=document.querySelector(".navbar");
+
+// Building a tabbed component
+const optbtn=document.querySelectorAll(".operations_btn")
+const optbtncontainer=document.querySelector(".operations--button")
+const optcon=document.querySelectorAll(".operations_operation");
+
+optbtncontainer.addEventListener("click",function(e){
+    const click=e.target.closest(".operations_btn")
+
+    //Guard clause
+    if(!click) return;
+
+    //Remove active classes
+    optbtn.forEach(t=> t.classList.remove("operations_btn--active"));
+    optcon.forEach(c=> c.classList.remove("operations_operation--active"));
+
+    //Active btn
+    click.classList.add("operations_btn--active")
+    document.querySelector(`.operations_operation--${click.dataset.tab}`).classList.add("operations_operation--active");
+    
+})
+
+

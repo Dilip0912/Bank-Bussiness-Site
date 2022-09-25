@@ -29,7 +29,7 @@
             <a href="#section--3" class="navlist-link">Testimonials</a>
           </li>
           <li class="navlist-item">
-            <button class="nav-openaccount">Open account</button>
+            <button class="navlist-link" id="nav-openaccount">Open account</button>
           </li>
         </ul>
       </nav>
@@ -129,17 +129,17 @@
       </div>
       <div class="operations">
         <div class="operations--button">
-          <button class="operations--loans">01Instant Loans</button>
-          <button class="operations--transfers">02Instant Transfers</button>
-          <button class="operations--closing">03Instant Closing</button>
+          <button class="operations_btn operations_btn--active" id="operations--loans" data-tab="1"><span class="spanofopt">01</span> Instant Loans</button>
+          <button class="operations_btn" id="operations--transfers" data-tab="2"><span class="spanofopt">02</span> Instant Transfers</button>
+          <button class="operations_btn" id="operations--closing" data-tab="3"><span class="spanofopt">03</span> Instant Closing</button>
         </div>
-        <div class="operations--operation active">
+        <div class="operations_operation operations_operation--1  operations_operation--active">
           <div class="operation--icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-upload"></use>
             </svg>
           </div>
-          <div class="operation--content">
+          <div class="operation--content--1">
             <h3 class="operation--heading">
               Tranfser money to anyone, instantly! No fees, no BS.
             </h3>
@@ -153,30 +153,33 @@
             </p>
           </div>
         </div>
-        <div class="operations--operation">
+        <div class="operations_operation operations_operation--2">
           <div class="operation--icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-home"></use>
             </svg>
           </div>
-          <h3 class="operation--heading">
-            Buy a home or make your dreams come true, with instant loans
-          </h3>
-          <p class="operation--para">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
-            odio aliquam in eveniet? Beatae eos sed eius unde officia impedit
-            nobis. Dolor nesciunt pariatur optio ut quo porro, asperiores
-            obcaecati necessitatibus maxime culpa blanditiis facilis nulla omnis
-            ipsum voluptates consectetur itaque repellat inventore. Earum
-            officiis voluptatibus consequatur laboriosam et sit.
-          </p>
+          <div class="operation--content--2">
+            <h3 class="operation--heading">
+              Buy a home or make your dreams come true, with instant loans
+            </h3>
+            <p class="operation--para">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum
+              odio aliquam in eveniet? Beatae eos sed eius unde officia impedit
+              nobis. Dolor nesciunt pariatur optio ut quo porro, asperiores
+              obcaecati necessitatibus maxime culpa blanditiis facilis nulla omnis
+              ipsum voluptates consectetur itaque repellat inventore. Earum
+              officiis voluptatibus consequatur laboriosam et sit.
+            </p>
+          </div>
         </div>
-        <div class="operations--operation">
+        <div class="operations_operation operations_operation--3">
           <div class="operation--icon">
             <svg>
               <use xlink:href="img/icons.svg#icon-user-x"></use>
             </svg>
           </div>
+          <div class="operation--content--3">
           <h3 class="operation--heading">
             No longer need your account? No problem! Close it instantly.
           </h3>
@@ -188,6 +191,7 @@
             ipsum voluptates consectetur itaque repellat inventore. Earum
             officiis voluptatibus consequatur laboriosam et sit.
           </p>
+          </div>
         </div>
       </div>
     </section>
