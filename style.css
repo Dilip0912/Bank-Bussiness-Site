@@ -1,6 +1,6 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #f3f3f3;
+    background-color: #f4f4f4;
     color: #444;
     font-weight: 100;
 }
@@ -28,7 +28,7 @@ body{
 }
 .navlist-link{
     text-decoration: none;
-    color: #444;
+    color: #443;
     cursor: pointer;
 }
 #nav-openaccount{
